@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/1d20/capitalizer-bot/issues"
   },
-  "homepage": "https://github.com/1d20/capitalizer-bot#readme"
+  "homepage": "https://github.com/1d20/capitalizer-bot#readme",
+  "dependencies": {
+    "request-promise": "^3.0.0"
+  }
 }
