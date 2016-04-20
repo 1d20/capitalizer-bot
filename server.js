@@ -1,13 +1,11 @@
-require('dotenv').config();
+/* global process */
+import dotenv from 'dotenv';
+import {TelegramBotApi} from './lib';
 
-const pr = require('request-promise');
+dotenv.config();
 
 const token = process.env.BOT_TOKEN;
 
-pr.get(`https://api.telegram.org/bot${token}/getMe`)
-  .then((response) => {
-    console.log(response);
-  })
-  .catch((reason) => {
-    console.log(reason);
-  });
+const telegramBotApi = new TelegramBotApi(token);
+
+telegramBotApi.run();
