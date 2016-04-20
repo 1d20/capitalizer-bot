@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/1d20/capitalizer-bot#readme",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "request-promise": "^3.0.0"
   }
 }
