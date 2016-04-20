@@ -2,8 +2,9 @@
   "name": "capitalizer-bot",
   "version": "1.0.0",
   "description": "Capitaliser Bot for telegram",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/1d20/capitalizer-bot#readme",
   "dependencies": {
     "dotenv": "^2.0.0",
+    "nodemon": "^1.9.1",
     "request-promise": "^3.0.0"
   }
 }
