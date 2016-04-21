@@ -12,7 +12,7 @@ const telegramBotApi = new TelegramBotApi(token);
 
 const app = express();
 
-app.post(token, (req, res) => {
+app.post(`/${token}`, (req, res) => {
     console.log(req.body);
 
     res.send('ok');
