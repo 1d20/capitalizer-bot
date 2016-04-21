@@ -1,24 +1,17 @@
 /* global process */
-import dotenv from 'dotenv';
-import {TelegramBotApi} from './lib';
+import {telegramBotApi} from './lib';
 import express from 'express';
 import bodyParser from 'body-parser';
-
-dotenv.config();
+import {handlers} from './handlers';
 
 const port = process.env.PORT;
 const token = process.env.BOT_TOKEN;
-const telegramBotApi = new TelegramBotApi(token);
 
 const app = express();
 
 app.use(bodyParser.json());
 
-app.post(`/${token}`, (req, res) => {
-    console.log(req.body);
-
-    res.send('ok');
-});
+app.post(`/${token}`, handlers);
 
 app.listen(port, () => {
     console.log(`Server started at ${port}`);
