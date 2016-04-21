@@ -11,6 +11,12 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.post('/redeploy', (req, res) => {
+    console.log(req.body);
+
+    res.sendStatus(200);
+});
+
 app.post(`/${token}`, handlers);
 
 app.listen(port, () => {
