@@ -12,6 +12,8 @@ const telegramBotApi = new TelegramBotApi(token);
 
 const app = express();
 
+app.use(bodyParser.json());
+
 app.post(`/${token}`, (req, res) => {
     console.log(req.body);
 
