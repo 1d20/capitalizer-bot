@@ -4,7 +4,7 @@ export function handleMessageMiddleware(req, res, next) {
     if (req.body.message) {
         const message = req.body.message;
 
-        console.log('message recieved', message);
+        console.log('message received', message);
 
         return telegramBotApi.sendMessage({
             chat_id: message.chat.id,

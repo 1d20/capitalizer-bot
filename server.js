@@ -12,9 +12,22 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post('/redeploy', (req, res) => {
-    console.log(req.body);
+    console.log('git hook arrived', req.body);
 
-    res.sendStatus(200);
+    const exec = require('child_process').exec;
+    exec('git pull', (error, stdout, stderr) => {
+        console.log(`stdout: ${stdout}`);
+        console.log(`stderr: ${stderr}`);
+
+        if (error !== null) {
+            console.log(`exec error: ${error}`);
+
+            res.status(500).send(error);
+        }
+
+        res.sendStatus(200);
+    });
+
 });
 
 app.post(`/${token}`, handlers);
