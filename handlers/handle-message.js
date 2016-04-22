@@ -8,7 +8,7 @@ export function handleMessageMiddleware(req, res, next) {
 
         return telegramBotApi.sendMessage({
             chat_id: message.chat.id,
-            text: message.text.toUpperCase()
+            text: ('' + message.text).toUpperCase()
         }).then((response) => {
             return res.send(response);
         }).catch((reason) => {
