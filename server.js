@@ -3,7 +3,7 @@ import {telegramBotApi} from './lib';
 import express from 'express';
 import bodyParser from 'body-parser';
 import {handlers} from './handlers';
-import {morgan} from 'morgan';
+import morgan from 'morgan';
 
 const port = process.env.PORT;
 const token = process.env.BOT_TOKEN;
@@ -17,7 +17,7 @@ app.post('/redeploy', (req, res) => {
     console.log('git hook arrived', req.body);
 
     const exec = require('child_process').exec;
-    exec('git pull', (error, stdout, stderr) => {
+    exec('git pull && npm i', (error, stdout, stderr) => {
         console.log(`stdout: ${stdout}`);
         console.log(`stderr: ${stderr}`);
 
