@@ -4,7 +4,7 @@
   "description": "Capitaliser Bot for telegram",
   "main": "server.js",
   "scripts": {
-    "prod": "pm2 start prod.js --name capsitbot",
+    "prod": "pm2 start prod.js --name caps",
     "start": "nodemon --exec babel-node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

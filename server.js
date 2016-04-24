@@ -15,7 +15,7 @@ app.post('/redeploy', (req, res) => {
     console.log('git hook arrived', req.body);
 
     const exec = require('child_process').exec;
-    exec('git pull', (error, stdout, stderr) => {
+    exec('git pull && pm2 restart caps', (error, stdout, stderr) => {
         console.log(`stdout: ${stdout}`);
         console.log(`stderr: ${stderr}`);
 
@@ -31,6 +31,10 @@ app.post('/redeploy', (req, res) => {
 });
 
 app.post(`/${token}`, handlers);
+
+app.all('*', () => {
+    res.send(`I'm bot`);
+});
 
 app.listen(port, () => {
     console.log(`Server started at ${port}`);

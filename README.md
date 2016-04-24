@@ -13,7 +13,7 @@ Send him a message and he will give you CAPS reply of sam text, so just dont was
   containing `url` = `https://yourdomain.com/<token>` and `certificate` as File
 
 ## Start
-* copy `.env.epamle` to `.env` file
+* copy `.env.example` to `.env` file
 * update `BOT_ENV` param with real bot Token
 * install `npm i`
 * run `npm start` or `npm prod` (using `pm2` global)
