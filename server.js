@@ -32,7 +32,7 @@ app.post('/redeploy', (req, res) => {
 
 app.post(`/${token}`, handlers);
 
-app.all('*', () => {
+app.all('*', (req, res) => {
     res.send(`I'm bot`);
 });
 
