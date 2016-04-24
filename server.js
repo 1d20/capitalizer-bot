@@ -22,12 +22,11 @@ app.post('/redeploy', (req, res) => {
         if (error !== null) {
             console.log(`exec error: ${error}`);
 
-            res.status(500).send(error);
+            return res.status(500).send(error);
         }
 
         res.sendStatus(200);
     });
-
 });
 
 app.post(`/${token}`, handlers);
